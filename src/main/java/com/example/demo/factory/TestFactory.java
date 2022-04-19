@@ -17,7 +17,7 @@ public class TestFactory implements ApplicationContextAware, InitializingBean {
 
     List<TestService> list = new ArrayList<>();
     @Override
-    public void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() {
         Map<String,TestService> map = this.applicationContext.getBeansOfType(TestService.class);
         for(Map.Entry<String,TestService> entry : map.entrySet()){
             list.add(entry.getValue());
